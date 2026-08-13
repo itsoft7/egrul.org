@@ -14,13 +14,18 @@ JSON и XML доступны [подписчикам](https://egrul.org/subscrib
 Authorization: Bearer email:token
 ```
 
-Запрашивайте `.json.gz` — сжатие уменьшает трафик примерно в 5 раз.
+Запрашивайте `.json.gz` или `.xml.gz` — сжатие уменьшает трафик примерно в 5 раз.
 
 ```php
 <?php
+// JSON
 $json = gzdecode(file_get_contents('https://egrul.org/7730588444.json.gz'));
 $data = json_decode($json, true);
 echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+
+// XML
+$xml = gzdecode(file_get_contents('https://egrul.org/7730588444.xml.gz'));
+echo $xml;
 ```
 
 Примеры на других языках:
@@ -34,7 +39,7 @@ echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 
 ## Ответ
 
-Корень JSON совпадает с XML ФНС (`СвЮЛ` / `СвИП`). Описание формата:
+Корень JSON совпадает с XML ФНС (`СвЮЛ` / `СвИП`). Фрагменты: [JSON](examples/response.fragment.json), [XML](examples/response.fragment.xml). Описание формата:
 
 - [организации](https://egrul.org/docs/16493030_1/16493030_1.html)
 - [ИП](https://egrul.org/docs/16493030_2/16493030_2.html)
