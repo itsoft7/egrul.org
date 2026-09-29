@@ -34,6 +34,7 @@ echo $xml;
 - [examples/python/get_org.py](examples/python/get_org.py)
 - [examples/nodejs/get_org.js](examples/nodejs/get_org.js)
 - [examples/curl/get_org.sh](examples/curl/get_org.sh)
+- [examples/mcp/](examples/mcp/) — вызов MCP-сервера (ChatGPT/Claude/др.) напрямую, без ИИ-клиента
 
 Тот же блок — на [главной сайта](https://egrul.org/#Примеры_кода).
 
